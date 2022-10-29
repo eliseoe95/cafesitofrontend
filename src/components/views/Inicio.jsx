@@ -1,8 +1,14 @@
+import CardProducto from "./producto/CardProducto";
+import {Row} from 'react-bootstrap';
 
 const Inicio = () => {
     return (
         <div>
-            <h1>Pagina Principal</h1>
+            <h1 className="display-4 text-center">Bienvenidos</h1>
+            <hr/>
+            <Row>
+                <CardProducto/>
+            </Row>
         </div>
     );
 };
