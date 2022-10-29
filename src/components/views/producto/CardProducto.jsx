@@ -17,7 +17,7 @@ const CardProducto = () => {
                         <Card.Title className="text-center">Brownie</Card.Title>
                         <Card.Text className="fw-bold">Precio: $400</Card.Text>
                         <hr />
-                        <div class="d-grid gap-2 col-6 mx-auto">
+                        <div className="d-grid gap-2 col-6 mx-auto">
                             <Button variant="danger" as={Link} to='/administrar/detalle'>Ver mas</Button>
                         </div>
                     </Card.Body>
