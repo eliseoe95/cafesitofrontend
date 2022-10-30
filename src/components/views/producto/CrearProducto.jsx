@@ -1,15 +1,32 @@
-import { Form, Button, Container } from 'react-bootstrap'
-import { useForm } from 'react-hook-form'
+import { Form, Button, Container } from 'react-bootstrap';
+import { useForm } from 'react-hook-form';
+import { crearProductoAPI } from '../../helpers/queries';
+import  Swal  from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
 
 const CrearProducto = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm()
+    reset,
+  } = useForm();
+
+  const navegacion = useNavigate();
 
   const onSubmit = (data) => {
     console.log(data)
+    //enviar la peticion a la API
+    crearProductoAPI(data).then((respuesta)=>{
+        if(respuesta.status===201){
+            Swal.fire('Producto creado', 'El producto fue cargador correctamente', 'success' )
+        reset();
+        navegacion('/administrar');
+        }else{
+            Swal.fire('Ocurrio un error', 'Intente esta operacion en unos minutos', 'error' )
+
+        }
+    })
   }
 
   return (
@@ -74,7 +91,7 @@ const CrearProducto = () => {
                 required: 'La URL de la imagen es obligatoria',
                 pattern: {
                   value: /^https?:\/\/[\w\-]+(\.[\w\-]+)+[/#?]?.*$/,
-                  message: 'La URL ingresada no es valida',
+                  message: 'La URL ingresada no es valida'
                 },
               })}
             />
