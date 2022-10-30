@@ -5,7 +5,6 @@ import { borrarProductoAPI, consultarAPI } from "../../helpers/queries";
 import Swal from 'sweetalert2';
 
 const ItemProducto = ({producto, setProductos}) => {
-
     
     const borrarProducto = ()=>{
         Swal.fire({
@@ -31,7 +30,6 @@ const ItemProducto = ({producto, setProductos}) => {
             }
           })
     }
-
     return (
         <>
             <tr>
@@ -41,7 +39,7 @@ const ItemProducto = ({producto, setProductos}) => {
                 <td>{producto.imagen}</td>
                 <td>{producto.categoria}</td>
                 <td className="text-center">
-                    <Link className="btn btn-outline-warning me-1" to={`/administrar/editar/:id`}>
+                    <Link className="btn btn-outline-warning me-1" to={`/administrar/editar/${producto.id}`}>
                         <i className="bi bi-arrow-clockwise text-warning"></i>
                     </Link>
                     <Button variant="none" onClick={borrarProducto}>

@@ -41,3 +41,33 @@ export const borrarProductoAPI = async(id)=>{
         console.log(error)
         return false;
     }}
+    export const editarProductoAPI = async(id,producto)=>{
+        //peticion get para obtener todos los productos
+        try {
+            const respuesta = await fetch(URL+'/'+id,{
+                method: "PUT",
+                headers:{
+                    "Content-Type":"application/json"
+                },
+                body: JSON.stringify(producto)
+            });
+            return respuesta;
+        } catch (error) {
+            console.log(error)
+            return false;
+        }
+    }
+    export const obtenerProductoAPI = async(id)=>{
+        //peticion get para obtener todos los productos
+        try {
+            const respuesta = await fetch(URL+'/'+id);
+            const producto = {
+                dato: await respuesta.json(),
+                status: respuesta.status
+            }
+            return producto;
+        } catch (error) {
+            console.log(error)
+            return false;
+        }
+    }

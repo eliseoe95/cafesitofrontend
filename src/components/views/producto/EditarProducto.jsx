@@ -1,14 +1,46 @@
+import { useEffect } from 'react';
 import { Form, Button, Container } from 'react-bootstrap'
 import { useForm } from 'react-hook-form'
+import { useParams, useNavigate } from 'react-router-dom';
+import { editarProductoAPI, obtenerProductoAPI } from '../../helpers/queries';
+import Swal from 'sweetalert2'
+
 const EditarProducto = () => {
+  
+  const {id} = useParams();
+
+  useEffect(()=>{
+    obtenerProductoAPI(id).then((respuesta)=>{
+      if(respuesta.status===200){
+        console.log(respuesta)
+        setValue('nombreProducto',respuesta.dato.nombreProducto)
+        setValue('precio',respuesta.dato.precio)
+        setValue('imagen',respuesta.dato.imagen)
+        setValue('categoria',respuesta.dato.categoria)
+      }
+    }
+    )
+  })
+  
   const {
     register,
     handleSubmit,
     formState: { errors },
+    setValue
   } = useForm()
+
+  const navegacion = useNavigate();
 
   const onSubmit = (data) => {
     console.log(data)
+    editarProductoAPI(id, data).then((respuesta)=>{
+      if(respuesta.status===200){
+        Swal.fire('Producto modifica', 'El producto fue modificado', 'success');
+        navegacion('/administrar')
+      }else{
+        Swal.fire('Ocurrio un error', 'El producto no pudo ser modificado', 'error');
+      }
+    })
   }
 
   return (
@@ -18,22 +50,22 @@ const EditarProducto = () => {
         <hr />
       </section>
       <section className="container my-3">
-        <Form noValidate onSubmit={handleSubmit()}>
+        <Form noValidate onSubmit={handleSubmit(onSubmit)}>
           <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Nombre producto*</Form.Label>
+          <Form.Label>Nombre producto*</Form.Label>
             <Form.Control
               required
               type="text"
               placeholder="Ej:cafe"
-              {...register('nombreProduto', {
-                required: 'El nombre producto es un dato obligatorio',
+              {...register('nombreProducto', {
+                required: 'El nombre del producto es un dato obligatorio',
                 minLength: {
                   value: 2,
-                  message: 'El minimo de caracteres es 2',
+                  message: 'La cantidad minima de caracteres es 2',
                 },
                 maxLength: {
                   value: 100,
-                  message: 'El maximo de caracteres es de 100',
+                  message: 'La cantidad maxima de caracteres es 100',
                 },
               })}
             />

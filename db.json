@@ -1,18 +1,11 @@
 {
   "productos": [
     {
-      "nombreProducto": "asf",
-      "precio": "2",
+      "nombreProducto": "medialuna",
+      "precio": "41",
       "imagen": "https://images.pexels.com/photos/2467287/pexels-photo-2467287.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "categoria": "Bebida Caliente",
-      "id": 1
-    },
-    {
-      "nombreProducto": "asdasdasfa",
-      "precio": "213",
-      "imagen": "https://images.pexels.com/photos/2467287/pexels-photo-2467287.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "categoria": "Bebida Caliente",
-      "id": 2
+      "categoria": "Salado",
+      "id": 5
     }
   ]
 }
