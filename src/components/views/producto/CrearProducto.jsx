@@ -24,7 +24,6 @@ const CrearProducto = () => {
         navegacion('/administrar');
         }else{
             Swal.fire('Ocurrio un error', 'Intente esta operacion en unos minutos', 'error' )
-
         }
     })
   }
