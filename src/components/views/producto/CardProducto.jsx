@@ -18,7 +18,7 @@ const CardProducto = ({producto}) => {
                         <Card.Text className="fw-bold">{producto.precio}</Card.Text>
                         <hr />
                         <div className="d-grid gap-2 col-6 mx-auto">
-                            <Button variant="danger" as={Link} to={`/administrar/detalle/${producto.id}`}>Ver mas</Button>
+                            <Button variant="danger" as={Link} to={`/administrar/detalle/${producto._id}`}>Ver mas</Button>
                         </div>
                     </Card.Body>
                 </Card>

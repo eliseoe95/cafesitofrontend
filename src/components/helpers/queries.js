@@ -10,7 +10,6 @@ export const consultarAPI = async()=>{
         console.log(listaProductos);
         return listaProductos;
     } catch (error) {
-        console.log(error)
         return false;
     }
 }

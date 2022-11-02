@@ -1,5 +1,5 @@
 import CardProducto from "./producto/CardProducto";
-import {Row} from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
 import { useEffect, useState } from "react";
 import { consultarAPI } from "../helpers/queries";
 
@@ -18,7 +18,7 @@ const Inicio = () => {
             <hr/>
             <Row>
                 {
-                    verProductos.map((producto)=>{return <CardProducto key={producto.id} producto={producto} /> })
+                    verProductos.map((producto)=>{return <CardProducto key={producto._id} producto={producto} />})
                 }
             </Row>
         </div>
