@@ -15,16 +15,16 @@ const CrearProducto = () => {
   const navegacion = useNavigate();
 
   const onSubmit = (data) => {
-    console.log(data)
     //enviar la peticion a la API
     crearProductoAPI(data).then((respuesta)=>{
-        if(respuesta.status===201){
-            Swal.fire('Producto creado', 'El producto fue cargador correctamente', 'success' )
+      if(respuesta.status===201){
+        Swal.fire('Producto creado', 'El producto fue cargador correctamente', 'success' )
         reset();
         navegacion('/administrar');
-        }else{
-            Swal.fire('Ocurrio un error', 'Intente esta operacion en unos minutos', 'error' )
-        }
+      }else{
+        Swal.fire('Ocurrio un error', 'Intente esta operacion en unos minutos', 'error' )
+      }
+      console.log(respuesta)
     })
   }
 

@@ -6,6 +6,78 @@
       "imagen": "https://images.pexels.com/photos/2467287/pexels-photo-2467287.jpeg?auto=compress&cs=tinysrgb&w=600",
       "categoria": "Salado",
       "id": 5
+    },
+    {
+      "nombreProducto": "asdas",
+      "precio": "44",
+      "imagen": "https://images.pexels.com/photos/6161502/pexels-photo-6161502.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "categoria": "Bebida Caliente",
+      "id": 6
+    },
+    {
+      "nombreProducto": "qtwqwet",
+      "precio": "423",
+      "imagen": "https://images.pexels.com/photos/6161502/pexels-photo-6161502.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "categoria": "Bebida Caliente",
+      "id": 7
+    },
+    {
+      "nombreProducto": "rwfsdgsda",
+      "precio": "453",
+      "imagen": "https://images.pexels.com/photos/6161502/pexels-photo-6161502.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "categoria": "Bebida Caliente",
+      "id": 8
+    },
+    {
+      "nombreProducto": "SDAFSDAF",
+      "precio": "33",
+      "imagen": "https://images.pexels.com/photos/6161502/pexels-photo-6161502.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "categoria": "Bebida Fria",
+      "id": 9
+    },
+    {
+      "nombreProducto": "asf",
+      "precio": "23",
+      "imagen": "https://images.pexels.com/photos/2467287/pexels-photo-2467287.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "categoria": "Bebida Caliente",
+      "id": 10
+    }
+  ],
+  "usuarios": [
+    {
+      "nombre": "Eliseo",
+      "apellido": "Espindola",
+      "email": "eliseoespindola1@gmail.com",
+      "contrasenia": "eliseo123",
+      "id": 1
+    },
+    {
+      "nombre": "Josefina",
+      "apellido": "daoua",
+      "email": "jochydaoua@gmail.com",
+      "contrasenia": "Alachicalepusecuca",
+      "id": 2
+    },
+    {
+      "nombre": "Lu",
+      "apellido": "Cativa",
+      "email": "lucativa69@gmail.com",
+      "contrasenia": "ñkfsgjdsfkg",
+      "id": 3
+    },
+    {
+      "nombre": "ffdsf",
+      "apellido": "fdsfsdf",
+      "email": "dsfdsdola1@gmail.com",
+      "contrasenia": "3242gff",
+      "id": 4
+    },
+    {
+      "nombre": "dsfdsf",
+      "apellido": "sdfsdfdsf",
+      "email": "sdfsdfndola1@gmail.com",
+      "contrasenia": "fdsfsdf123",
+      "id": 5
     }
   ]
 }

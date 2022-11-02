@@ -1,4 +1,5 @@
 const URL = process.env.REACT_APP_API_CAFECITO;
+const URLUsuario = process.env.REACT_APP_API_USUARIOS;
 
 export const consultarAPI = async()=>{
     //peticion get para obtener todos los productos
@@ -66,6 +67,35 @@ export const borrarProductoAPI = async(id)=>{
                 status: respuesta.status
             }
             return producto;
+        } catch (error) {
+            console.log(error)
+            return false;
+        }
+    }
+    export const consultarUsuarioAPI = async()=>{
+        //peticion get para obtener todos los productos
+        try {
+            console.log(URLUsuario)
+            const respuesta = await fetch(URLUsuario);
+            const listaUsuarios = await respuesta.json()
+            console.log(listaUsuarios);
+            return listaUsuarios;
+        } catch (error) {
+            console.log(error)
+            return false;
+        }
+    }
+    export const crearUsuarioAPI = async(usuario)=>{
+        //peticion post para crear un usuario
+        try {
+            const respuesta = await fetch(URLUsuario, {
+                method: 'POST',
+                headers:{
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(usuario)
+            });
+            return respuesta;
         } catch (error) {
             console.log(error)
             return false;
