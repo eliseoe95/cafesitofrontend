@@ -3,6 +3,7 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useForm } from 'react-hook-form';
 import { crearUsuarioAPI } from "../../helpers/queries";
+import Swal from "sweetalert2";
 
 const Login = () => {
   const [show, setShow] = useState(false);
@@ -20,8 +21,22 @@ const {
 const onSubmit = (data)=>{
     console.log(data)
     crearUsuarioAPI(data).then((respuesta)=>{
-      reset();
-      handleClose();
+      if(respuesta.status===201){
+        Swal.fire(
+          'El usuario fue creado con exito',
+          'Los datos ingresados fueron cargados correctamente',
+          'success'
+        )
+        reset();
+        handleClose();
+      }else{
+        Swal.fire(
+          'El usuario no fue creado',
+          'Los datos ingresados son incorrectos',
+          'danger'
+        )
+      }
+      
       console.log(respuesta);
     });
 }

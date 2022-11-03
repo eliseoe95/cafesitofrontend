@@ -17,7 +17,7 @@ const ItemProducto = ({producto, setProductos}) => {
             confirmButtonText: 'Si, borrar'
           }).then((result) => {
             if (result.isConfirmed) {
-                borrarProductoAPI(producto.id).then((respuesta)=>{
+                borrarProductoAPI(producto._id).then((respuesta)=>{
                     if(respuesta.status===200){
                         Swal.fire('Producto eliminado', 'El producto fue correctamente eliminado', 'success');
                         consultarAPI().then((respuesta)=>{

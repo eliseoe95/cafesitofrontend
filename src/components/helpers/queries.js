@@ -34,7 +34,7 @@ export const borrarProductoAPI = async(id)=>{
     //peticion post para crear un producto
     try {
         const respuesta = await fetch(URL+'/'+id, {
-            method: 'DELETE',
+            method: 'DELETE'
         });
         return respuesta;
     } catch (error) {
