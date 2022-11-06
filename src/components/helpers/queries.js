@@ -1,5 +1,6 @@
 const URL = process.env.REACT_APP_API_CAFECITO;
 const URLUsuario = process.env.REACT_APP_API_USUARIOS;
+const URLLogin = process.env.REACT_APP_API_LOGIN;
 
 export const consultarAPI = async()=>{
     //peticion get para obtener todos los productos
@@ -103,7 +104,7 @@ export const borrarProductoAPI = async(id)=>{
     export const loguearUsuarioAPI = async(usuario)=>{
         //peticion post para loguear un usuario
         try {
-            const respuesta = await fetch(URLUsuario, {
+            const respuesta = await fetch(URLLogin, {
                 method: 'POST',
                 headers:{
                     "Content-Type": "application/json"
