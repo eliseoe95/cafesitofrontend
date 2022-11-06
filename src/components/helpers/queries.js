@@ -100,3 +100,19 @@ export const borrarProductoAPI = async(id)=>{
             return false;
         }
     }
+    export const loguearUsuarioAPI = async(usuario)=>{
+        //peticion post para loguear un usuario
+        try {
+            const respuesta = await fetch(URLUsuario, {
+                method: 'POST',
+                headers:{
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(usuario)
+            });
+            return respuesta;
+        } catch (error) {
+            console.log(error)
+            return false;
+        }
+    }

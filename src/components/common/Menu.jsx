@@ -28,7 +28,7 @@ const Menu = () => {
             {usuarioLogueado.nombre?
             <>
               <NavLink to='/administrar' className={'nav-item nav-link'}>Administrador</NavLink>
-              <Registrar></Registrar>
+              <Registrar setUsuarioLogueado={setUsuarioLogueado}></Registrar>
               <Button variant='dark' onClick={cerrarSesion}>Cerrar Sesion</Button>
               </>
             :<Login setUsuarioLogueado={setUsuarioLogueado}></Login>}

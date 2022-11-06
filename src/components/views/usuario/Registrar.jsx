@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 import { crearUsuarioAPI } from "../../helpers/queries";
 import Swal from "sweetalert2";
 
-const Login = () => {
+const Login = ({setUsuarioLogueado}) => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -27,13 +27,15 @@ const onSubmit = (data)=>{
           'Los datos ingresados fueron cargados correctamente',
           'success'
         )
+        localStorage.setItem('usuarioLogueado', JSON.stringify(data));
+        setUsuarioLogueado(data);
         reset();
         handleClose();
       }else{
         Swal.fire(
           'El usuario no fue creado',
           'Los datos ingresados son incorrectos',
-          'danger'
+          'error'
         )
       }
       

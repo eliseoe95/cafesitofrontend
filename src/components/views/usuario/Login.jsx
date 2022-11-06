@@ -2,7 +2,7 @@ import { Button, Modal, Form } from "react-bootstrap";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { consultarUsuarioAPI } from "../../helpers/queries";
+import { consultarUsuarioAPI, loguearUsuarioAPI } from "../../helpers/queries";
 import Swal from "sweetalert2";
 
 const Login = ({setUsuarioLogueado}) => {
@@ -24,6 +24,7 @@ const Login = ({setUsuarioLogueado}) => {
       console.log(usuarioIngresado);
       if(usuarioIngresado){
         if(data.contrasenia===usuarioIngresado.contrasenia){
+          loguearUsuarioAPI(data);
           localStorage.setItem('usuarioLogueado', JSON.stringify(usuarioIngresado))
           setUsuarioLogueado(usuarioIngresado);
           reset();
@@ -33,7 +34,7 @@ const Login = ({setUsuarioLogueado}) => {
         Swal.fire(
           'El usuario ingresado no es correcto',
           'Los datos ingresados no son validos',
-          'danger'
+          'error'
         )
       }
     })
